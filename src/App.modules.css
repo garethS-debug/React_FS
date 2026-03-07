@@ -1,0 +1,6 @@
+@import "./vars.css";
+.App {
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  background-color: var(--color-bg);
+}
