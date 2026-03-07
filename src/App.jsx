@@ -18,7 +18,7 @@ function App() {
 
 
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-glass py-2" id="mainNav">
+{/* <nav class="navbar navbar-expand-lg fixed-top navbar-glass py-2" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="#">Lumière</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
@@ -35,21 +35,24 @@ function App() {
       <a href="#" class="btn btn-glass">Get Started</a>
     </div>
   </div>
-</nav>
+</nav> */}
+
+
 
 <div id = "container">
 
 </div>
 
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-      </div>
-      <h1>Vite + React</h1>
+      </div> */}
+
+      {/* <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -60,7 +63,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   )
 }

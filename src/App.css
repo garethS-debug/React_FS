@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+
+
+.App{
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  background-color: var(--color-bg);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
