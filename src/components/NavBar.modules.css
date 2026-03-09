@@ -1,17 +1,14 @@
 @import "../vars.css";
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: var(--nav-height);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  justify-content: center;
+  padding: 2.5rem 1rem;
   background: #fff;
-  z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  position: static;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .title{
@@ -23,4 +20,45 @@
 
 .menu{
     display: flex;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.logo img {
+  width: 96px;
+  height: auto;
+  display: block;
+}
+
+.navbar > a{
+  order: 2;
+  margin-top: 0.5rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar > div {
+  order: 3;
+  width: 100%;
+}
+
+.navbar ul{
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  gap: 3.5rem;
+  justify-content: center;
+}
+
+.navbar ul li a{
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
 }

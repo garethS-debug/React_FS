@@ -2,15 +2,13 @@
 // import './NavBar.css' 
 
 import './NavBar.modules.css';
-import { getImagegUrl } from '../utils.js';
-
-
+import logo from '../../assets/Logo/logo_500px.svg';
 
 export const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={getImagegUrl('Logo/logo_500px.svg')} alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
       <a href="/">Portfolio</a>
       <div>
