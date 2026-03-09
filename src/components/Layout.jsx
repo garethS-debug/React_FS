@@ -1,6 +1,6 @@
 import { NavBar } from './NavBar'
 import Footer from './Footer';
-
+import Header from './Header';
 const pages = [
   { name: 'Home', key: 'home' },
   { name: 'About', key: 'about' },
@@ -31,6 +31,9 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
 
   return (
     <div style={styles.container}>
+      {/* Header */}
+      <Header />
+
       {/* Navigation */}
       <NavBar navLinks={renderPageLinks()} />
 
