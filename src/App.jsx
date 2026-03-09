@@ -11,14 +11,22 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   const [count, setCount] = useState(0)
+  const [page, setPage] = useState('home');
 
   return (
-    <div className="App">
-      <NavBar />
-      <main>
+    // <div className="App">
+    //   <NavBar />
+    //   <main>
        
-      </main>
-    </div>
+    //   </main>
+    // </div>
+        <Layout selectedPage={page} onSetPage={setPage}>
+  <NavBar />
+      {page === 'home' && <HomePage />}
+      {page === 'about' && <AboutPage />}
+      {page === 'contact' && <ContactPage />}
+
+    </Layout>
   );
 }
 
