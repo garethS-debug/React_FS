@@ -1,11 +1,13 @@
 import { NavBar } from './NavBar'
 import Footer from './Footer';
 import Header from './Header';
-const pages = [
-  { name: 'Home', key: 'home' },
-  { name: 'About', key: 'about' },
-  { name: 'Contact', key: 'contact' },
-]
+
+
+// const pages = [
+//   { name: 'Home', key: 'home' },
+//   { name: 'About', key: 'about' },
+//   { name: 'Contact', key: 'contact' },
+// ]
 
 const Layout = ({ children, selectedPage, onSetPage }) => {
 
@@ -14,18 +16,19 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
   const renderPageLinks = () => {
         
 
-    return pages.map(page => (
-       <li
-          key={page.key}
-          style={{
-            ...styles.sidebarLink,
-            ...(page.key === selectedPage ? styles.selected : {}),
-          }}
-          onClick={() => onSetPage(page.key)}
-        >
-          {page.name}
-        </li>
-    ));
+    // return pages.map(page => (
+    //    <li
+    //       key={page.key}
+    //       style={{
+    //         ...styles.sidebarLink,
+    //         ...(page.key === selectedPage ? styles.selected : {}),
+    //       }}
+    //       onClick={() => onSetPage(page.key)}
+    //     >
+    //       {page.name}
+    //     </li>
+    // ));
+    <NavBar selectedPage={selectedPage} onSetPage={onSetPage} />
   }
 
 
