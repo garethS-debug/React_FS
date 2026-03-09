@@ -32,7 +32,7 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
   return (
     <div style={styles.container}>
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
       {/* Navigation */}
       <NavBar navLinks={renderPageLinks()} />

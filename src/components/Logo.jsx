@@ -46,7 +46,6 @@ export default function EnterAnimation() {
 const imgStyle = {
   width: 100,
   height: 100,
-  borderRadius: "50%",
   objectFit: "cover",
   display: "block",
 }
