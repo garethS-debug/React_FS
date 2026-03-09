@@ -10,7 +10,7 @@ export const NavBar = () => {
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
-      <a href="/">Portfolio</a>
+      {/* <a href="/">Portfolio</a> */}
       <div>
         <ul>
           <li> <a href="#about">About</a></li>
