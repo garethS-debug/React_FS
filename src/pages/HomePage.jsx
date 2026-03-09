@@ -1,6 +1,8 @@
 // HomePage.js
 import React from 'react';
 
+//- **Homepage**: Introduction, links to social profiles, and an overview of your skills.
+
 const HomePage = () => {
   return (
     <div>
