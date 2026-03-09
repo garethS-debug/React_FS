@@ -54,7 +54,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    minWidth: '100vw',
+    width: '100%',
   },
   selected: {
     backgroundColor: '#999',
@@ -71,6 +71,11 @@ const styles = {
   content: {
     flex: 1,
     padding: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    maxWidth: '1280px',
+    margin: '0 auto',
   },
   footer: {
     backgroundColor: '#333',

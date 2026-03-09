@@ -46,6 +46,10 @@
 .navbar > div {
   order: 3;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul{

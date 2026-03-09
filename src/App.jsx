@@ -21,7 +21,7 @@ function App() {
     //   </main>
     // </div>
         <Layout selectedPage={page} onSetPage={setPage}>
-  <NavBar />
+  {/* <NavBar /> */}
       {page === 'home' && <HomePage />}
       {page === 'about' && <AboutPage />}
       {page === 'contact' && <ContactPage />}
