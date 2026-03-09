@@ -1,0 +1,5 @@
+laptop - reactfs\Scripts\activate
+reactfs\Scripts\activate.bat
+
+
+. .\reactfs\Scripts\Activate.ps1
