@@ -14,21 +14,8 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
   // TODO: what's stored in children, selectedPage, and onSetPage?
 
   const renderPageLinks = () => {
-        
-
-    // return pages.map(page => (
-    //    <li
-    //       key={page.key}
-    //       style={{
-    //         ...styles.sidebarLink,
-    //         ...(page.key === selectedPage ? styles.selected : {}),
-    //       }}
-    //       onClick={() => onSetPage(page.key)}
-    //     >
-    //       {page.name}
-    //     </li>
-    // ));
-    <NavBar selectedPage={selectedPage} onSetPage={onSetPage} />
+    // helper (not used): could return custom link list
+    return null
   }
 
 
@@ -38,7 +25,7 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
       {/* <Header /> */}
 
       {/* Navigation */}
-      <NavBar navLinks={renderPageLinks()} />
+      <NavBar selectedPage={selectedPage} onSetPage={onSetPage} />
 
       <div style={styles.main}>
         {/* Content Area */}
