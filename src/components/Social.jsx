@@ -7,7 +7,7 @@ export default function Social() {
     const [order, setOrder] = useState(initialOrder)
 
     useEffect(() => {
-        const timeout = setTimeout(() => setOrder(shuffle(order)), 1000)
+        const timeout = setTimeout(() => setOrder(shuffle(order)), 4000)
         return () => clearTimeout(timeout)
     }, [order])
 
@@ -44,27 +44,31 @@ function shuffle(array) {
  */
 
 const spring = {
-    type: "spring",
-    damping: 20,
-    stiffness: 300,
+type: "spring",
+damping: 10,
+stiffness: 0.2,
+mass: 1.5,
+speed: 0.5,
+bounce: 0.5,
 }
 
 const container = {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    position: "relative",
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 10,
-    width: 300,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+  listStyle: "none",
+  padding: 0,
+  margin: 0,
+  position: "relative",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "nowrap",
+  gap: 30,
+  width: "100%",       // span available width
+  overflowX: "auto",   // allow horizontal scrolling if needed
+  justifyContent: "flex-start",
+  alignItems: "center",
 }
 
 const item = {
-    width: 100,
-    height: 100,
+    width: 50,
+    height: 50,
     borderRadius: "10px",
 }
