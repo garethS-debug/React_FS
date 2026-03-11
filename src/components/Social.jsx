@@ -2,35 +2,38 @@
 
 import * as motion from "motion/react-client"
 import { useEffect, useState } from "react"
+import socialItems from "../data/socialItems"
+
 
 export default function Social() {
-    const [order, setOrder] = useState(initialOrder)
+    const [order, setOrder] = useState(socialItems)
 
     useEffect(() => {
-        const timeout = setTimeout(() => setOrder(shuffle(order)), 4000)
+        const timeout = setTimeout(() => setOrder(shuffle(order)), 9000)
         return () => clearTimeout(timeout)
     }, [order])
 
     return (
         <ul style={container}>
-            {order.map((backgroundColor) => (
+            {order.map((it) => (
                 <motion.li
-                    key={backgroundColor}
+                    key={it.id}
                     layout
                     transition={spring}
-                    style={{ ...item, backgroundColor }}
-                />
+                    style={{ ...item, backgroundColor: it.color }}
+                >
+                    <a href={it.href} target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
+                        <img
+                            src={it.icon}
+                            alt={it.id}
+                            style={{ width: "60%", height: "60%", objectFit: "contain" }}
+                        />
+                    </a>
+                </motion.li>
             ))}
         </ul>
     )
 }
-
-const initialOrder = [
-    "#ff0088",
-    "#dd00ee",
-    "#9911ff",
-    "#0d63f8",
-]
 
 /**
  * ==============   Utils   ================
@@ -52,6 +55,8 @@ speed: 0.5,
 bounce: 0.5,
 }
 
+
+
 const container = {
   listStyle: "none",
   padding: 0,
@@ -70,5 +75,11 @@ const container = {
 const item = {
     width: 50,
     height: 50,
+    minWidth: 50,
+    flex: "0 0 auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: "10px",
 }
+

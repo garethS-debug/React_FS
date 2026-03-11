@@ -32,14 +32,16 @@ export default function EnterAnimation() {
     <motion.img
       src={logo}
       initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
+      animate={{ rotate: 360, opacity: 1, scale: 1}}
       transition={{
         duration: 0.4,
-        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5},
+      
       }}
        whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
-     
+    // animate2={{ rotate: 360 }}
+    //   transition2={{ duration: 1, ease: "easeInOut", repeat: Infinity, repeatType: "loop" }}
       style={imgStyle}
       alt="logo"
     />

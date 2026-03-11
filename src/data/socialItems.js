@@ -1,0 +1,28 @@
+const socialItems = [
+  {
+    id: "github",
+    color: "#24292e",
+    icon: "/assets/Icons/github-icon.webp",
+    href: "https://github.com/yourusername",
+  },
+  {
+    id: "linkedin",
+    color: "#0A66C2",
+    icon: "/assets/Icons/linkedin.svg",
+    href: "https://www.linkedin.com/in/yourprofile",
+  },
+  {
+    id: "twitter",
+    color: "#1DA1F2",
+    icon: "/assets/Icons/twitter.svg",
+    href: "https://twitter.com/yourhandle",
+  },
+  {
+    id: "dribbble",
+    color: "#EA4C89",
+    icon: "/assets/Icons/dribbble.svg",
+    href: "https://dribbble.com/yourprofile",
+  },
+]
+
+export default socialItems
