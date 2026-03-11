@@ -1,0 +1,47 @@
+/* Styles for the HomePage hero section */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 50px 200px 50px;
+  min-height: 60vh;
+}
+
+.heroLeft {
+  flex: 1;
+}
+
+.heroRight {
+  flex: 1;
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 0.95;
+  margin: 0;
+  font-weight: 800;
+   padding: 90px 50px 50px 150px;
+}
+
+.lead {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+  color: #444;
+}
+
+.socialWrap {
+  padding-top: 200px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .heroRight {
+    margin-top: 1.5rem;
+  }
+}

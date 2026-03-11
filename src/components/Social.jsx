@@ -67,8 +67,8 @@ const container = {
   flexWrap: "nowrap",
   gap: 30,
   width: "100%",      
-  overflowX: "none",   
-  justifyContent: "flex-start",
+    overflowX: "visible",
+    justifyContent: "center",
   alignItems: "center",
 }
 
