@@ -9,7 +9,7 @@ export default function Social() {
     const [order, setOrder] = useState(socialItems)
 
     useEffect(() => {
-        const timeout = setTimeout(() => setOrder(shuffle(order)), 9000)
+        const timeout = setTimeout(() => setOrder(shuffle(order)), 5000)
         return () => clearTimeout(timeout)
     }, [order])
 
@@ -48,11 +48,11 @@ function shuffle(array) {
 
 const spring = {
 type: "spring",
-damping: 10,
+damping: 30,
 stiffness: 0.2,
-mass: 1.5,
-speed: 0.5,
-bounce: 0.5,
+mass: 0.5,
+speed: 1.5,
+bounce: 1.5,
 }
 
 
@@ -66,7 +66,7 @@ const container = {
   flexDirection: "row",
   flexWrap: "nowrap",
   gap: 30,
-  width: "100%",       // span available width
+  width: "100%",      
   overflowX: "none",   
   justifyContent: "flex-start",
   alignItems: "center",
