@@ -67,7 +67,7 @@ const container = {
   flexWrap: "nowrap",
   gap: 30,
   width: "100%",       // span available width
-  overflowX: "auto",   // allow horizontal scrolling if needed
+  overflowX: "none",   
   justifyContent: "flex-start",
   alignItems: "center",
 }
