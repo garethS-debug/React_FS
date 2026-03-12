@@ -2,6 +2,9 @@
 
 import { motion } from "motion/react"
 import { useEffect, useState } from "react"
+import CircleShape from "./drawingComps/CircleShape"
+import RectShape from "./drawingComps/RectShape"
+import LineShape from "./drawingComps/LineShape"
 
 const onShapeClicked = (id) => {
     console.log(`Shape ${id} clicked!`)
@@ -32,11 +35,11 @@ export default function PathDrawing() {
             animate="visible"
             style={image}
         >
-            <motion.circle
+            <CircleShape
                 className="circle-path"
-                cx="100"
-                cy="100"
-                r="80"
+                cx={100}
+                cy={100}
+                r={80}
                 stroke="#ff0088"
                 variants={draw}
                 custom={1}
@@ -63,21 +66,21 @@ export default function PathDrawing() {
                 custom={2.5}
                 style={shape}
             /> */}
-            <motion.rect
-                width="140"
-                height="140"
-                x="410"
-                y="30"
-                rx="20"
+            <RectShape
+                width={140}
+                height={140}
+                x={410}
+                y={30}
+                rx={20}
                 stroke="#0d63f8"
                 variants={draw}
                 custom={3}
                 style={shape}
             />
-            <motion.circle
-                cx="100"
-                cy="300"
-                r="80"
+            <CircleShape
+                cx={100}
+                cy={300}
+                r={80}
                 stroke="#0d63f8"
                 variants={draw}
                 custom={2}
@@ -104,21 +107,21 @@ export default function PathDrawing() {
                 variants={draw}
                 style={shape}
             /> */}
-            <motion.rect
-                width="140"
-                height="140"
-                x="410"
-                y="230"
-                rx="20"
+            <RectShape
+                width={140}
+                height={140}
+                x={410}
+                y={230}
+                rx={20}
                 stroke="#8df0cc"
                 custom={4}
                 variants={draw}
                 style={shape}
             />
-            <motion.circle
-                cx="100"
-                cy="500"
-                r="80"
+            <CircleShape
+                cx={100}
+                cy={500}
+                r={80}
                 stroke="#8df0cc"
                 variants={draw}
                 custom={3}
@@ -145,12 +148,12 @@ export default function PathDrawing() {
                 custom={4.5}
                 style={shape}
             /> */}
-            <motion.rect
-                width="140"
-                height="140"
-                x="410"
-                y="430"
-                rx="20"
+            <RectShape
+                width={140}
+                height={140}
+                x={410}
+                y={430}
+                rx={20}
                 stroke="#ff0088"
                 variants={draw}
                 custom={5}
