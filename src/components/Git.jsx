@@ -26,7 +26,19 @@ export default function GetGitHubRepos() {
         items.push(<RepoCard key={repos[i].id} repo={repos[i]} />);
     }
 
-    return <ul>{items}</ul>;
+    return (
+  <ul
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: 16,
+      padding: 0,
+      margin: 0,
+    }}
+  >
+    {items}
+  </ul>
+);
   } 
 
   export const renderRepos = (repos) => {
