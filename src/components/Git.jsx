@@ -30,10 +30,15 @@ export default function GetGitHubRepos() {
   <ul
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
       gap: 16,
       padding: 0,
-      margin: 0,
+      margin: "0 auto",
+      listStyle: "none",
+      width: "100%",
+      maxWidth: 960,            // constrain and center the grid
+      boxSizing: "border-box",
+      justifyItems: "stretch",
     }}
   >
     {items}
