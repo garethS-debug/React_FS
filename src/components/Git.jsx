@@ -15,13 +15,21 @@ export default function GetGitHubRepos() {
       .then((data) => {
         // renderRepos(data);
         // renderRepos2(data);
-        // renderRepos3(data);
-        console.log(data);
+        renderRepos(data);
+        console.log(data);  
       })
       .catch((error) => {
         console.error("Error:", error.message);
       });
   } 
+
+  export const renderRepos = (repos) => {
+   for (let i = 0; i < repos.length; i++) {
+    const repoFullName = repos[i].full_name;
+    console.log(repoFullName);  
+   }
+
+  }
 
 
 
