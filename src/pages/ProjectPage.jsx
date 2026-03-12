@@ -4,8 +4,8 @@ import React from 'react';
 const HomePage = () => {
   return (
     <div>
-      <h2>Welcome to the About Page</h2>
-      <p>This is the main content of the contact page.</p>
+      <h2>Welcome to the Projects Page</h2>
+      <p>Display your past projects as a gallery or a list</p>
     </div>
   );
 };
