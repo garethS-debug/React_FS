@@ -6,7 +6,7 @@ import styles from './App.module.css';
 import { NavBar } from './components/NavBar'
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import ProjectPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <Layout selectedPage={page} onSetPage={setPage}>
   {/* <NavBar /> */}
       {page === 'home' && <HomePage />}
-      {page === 'about' && <AboutPage />}
+      {page === 'projects' && <ProjectPage />}
       {page === 'contact' && <ContactPage />}
 
     </Layout>

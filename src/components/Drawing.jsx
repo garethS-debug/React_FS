@@ -1,6 +1,11 @@
 "use client"
 
 import { motion } from "motion/react"
+import { useEffect, useState } from "react"
+
+const onShapeClicked = (id) => {
+    console.log(`Shape ${id} clicked!`)
+}
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -36,8 +41,9 @@ export default function PathDrawing() {
                 variants={draw}
                 custom={1}
                 style={shape}
+                onClick={() => onShapeClicked(1)}
             />
-            <motion.line
+            {/* <motion.line
                 x1="220"
                 y1="30"
                 x2="360"
@@ -56,7 +62,7 @@ export default function PathDrawing() {
                 variants={draw}
                 custom={2.5}
                 style={shape}
-            />
+            /> */}
             <motion.rect
                 width="140"
                 height="140"
@@ -76,8 +82,9 @@ export default function PathDrawing() {
                 variants={draw}
                 custom={2}
                 style={shape}
+                onClick={() => onShapeClicked(2)}   
             />
-            <motion.line
+            {/* <motion.line
                 x1="220"
                 y1="230"
                 x2="360"
@@ -96,7 +103,7 @@ export default function PathDrawing() {
                 custom={3.5}
                 variants={draw}
                 style={shape}
-            />
+            /> */}
             <motion.rect
                 width="140"
                 height="140"
@@ -116,8 +123,9 @@ export default function PathDrawing() {
                 variants={draw}
                 custom={3}
                 style={shape}
+                onClick={() => onShapeClicked(3)}
             />
-            <motion.line
+            {/* <motion.line
                 x1="220"
                 y1="430"
                 x2="360"
@@ -136,7 +144,7 @@ export default function PathDrawing() {
                 variants={draw}
                 custom={4.5}
                 style={shape}
-            />
+            /> */}
             <motion.rect
                 width="140"
                 height="140"

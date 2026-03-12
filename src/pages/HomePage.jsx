@@ -15,8 +15,7 @@ const HomePage = () => {
         <div className={styles.heroRight}>
          
          
-          <Drawing />
-          
+          {/* <Drawing /> */}
 
         </div>
       </section>

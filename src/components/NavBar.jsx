@@ -13,7 +13,7 @@ import contactIcon from '../../assets/Icons/file-person.svg'
 export const NavBar = ({ selectedPage, onSetPage }) => {
   const pages = [
     { name: 'Home', key: 'home', icon: homeIcon },
-    { name: 'About', key: 'about', icon: aboutIcon },
+    { name: 'Projects', key: 'projects', icon: aboutIcon },
     { name: 'Contact', key: 'contact', icon: contactIcon },
   ];
 
