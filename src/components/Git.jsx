@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import RepoCard from "../components/RepoCard";
 
 export default function GetGitHubRepos() {
- 
+   const [repos, setRepos] = useState([]);
  const username = 'garethS-debug'
      const url = `https://api.github.com/users/${username}/repos`;
     
@@ -13,23 +14,30 @@ export default function GetGitHubRepos() {
         return response.json();
       })
       .then((data) => {
-        // renderRepos(data);
-        // renderRepos2(data);
-        renderRepos(data);
-        console.log(data);  
+        setRepos(data);
+
       })
       .catch((error) => {
         console.error("Error:", error.message);
       });
+
+    const items = [];
+    for (let i = 0; i < repos.length; i++) {
+        items.push(<RepoCard key={repos[i].id} repo={repos[i]} />);
+    }
+
+    return <ul>{items}</ul>;
   } 
 
   export const renderRepos = (repos) => {
-   for (let i = 0; i < repos.length; i++) {
-    const repoFullName = repos[i].full_name;
-    console.log(repoFullName);  
+        const items = [];
+        for (let i = 0; i < repos.length; i++) 
+        {
+        items.push(<RepoCard key={repos[i].id} repo={repos[i]} />);
+        }
+        return <ul>{items}</ul>;
    }
 
-  }
-
+  
 
 

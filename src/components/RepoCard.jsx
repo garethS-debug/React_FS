@@ -2,8 +2,11 @@
 import { motion } from "motion/react"
 import logo from '../../assets/Logo/logo_500px.svg'
 
-export default function EnterAnimation() {
+export default function RepoCard({ repo }) {
+
+    
   return (
+    console.log(repo.name + " rendered in RepoCard.jsx"),
     <motion.img
       src={logo}
       initial={{ opacity: 0, scale: 0 }}
