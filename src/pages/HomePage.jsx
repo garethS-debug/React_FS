@@ -26,6 +26,7 @@ const HomePage = () => {
     transition={{ type: "spring", damping: 30, stiffness: 400 }}
     rotationInterval={2000}
   />
+    <span className="rotating-after">Creative</span>
 
 </span>
 

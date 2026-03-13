@@ -126,12 +126,11 @@
   line-height: 1;
   vertical-align: middle;
   min-width: var(--rotating-line-width, auto);
+  flex-wrap: wrap; 
+  justify-content: flex-start;
 }
 
-/* place the rotating line absolutely inside its parent so it won't push layout */
-/* keep .rotating-line in document flow so it doesn't overlap other content */
 
-/* make the static pieces match the pill text sizing and vertically center */
 .rotating-before,
 .rotating-after {
   display: inline-flex;
@@ -140,4 +139,22 @@
   margin: 0;
   padding: 0;
   line-height: 1;
+}
+
+
+.rotating-after {
+  flex-basis: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* left align the after text */
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+.rotating-after {
+display: block;
+flex-basis: 100%;
+width: 100%;
+margin-top: 0.25rem; /* adjust gap as needed /
+text-align: left; / or center/right as you prefer */
 }
