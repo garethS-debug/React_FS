@@ -9,7 +9,7 @@ const socialItems = [
     id: "linkedin",
     color: "#0A66C2",
     icon: "/assets/Icons/linkedin-app-icon.png",
-    href: "https://www.linkedin.com/in/yourprofile",
+    href: "https://www.linkedin.com/in/gareth-swarte-697029170/",
   },
   {
     id: "twitter",

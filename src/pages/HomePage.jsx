@@ -15,7 +15,7 @@ const HomePage = () => {
 <span className="rotating-line">
   <span className="rotating-before">Crafting</span>
   <RotatingText
-    texts={['React', 'Bits', 'Is', 'Cool!']}
+    texts={['Better', 'Digital', 'Intuitive', 'Engaging']}
     mainClassName="rotating-hero px-2 sm:px-2 md:px-3 bg-transparent overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
     staggerFrom={"last"}
     initial={{ y: "100%" }}
@@ -26,7 +26,7 @@ const HomePage = () => {
     transition={{ type: "spring", damping: 30, stiffness: 400 }}
     rotationInterval={2000}
   />
-    <span className="rotating-after">experiences</span>
+    <span className="rotating-after">Experiences</span>
 
 </span>
 

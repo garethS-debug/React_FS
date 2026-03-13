@@ -22,7 +22,21 @@ export default function Social() {
                     transition={spring}
                     style={{ ...item, backgroundColor: it.color }}
                 >
-                    <a href={it.href} target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
+                    <a
+                        href={it.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={it.id}
+                        style={{
+                            display: "flex",
+                            width: "100%",
+                            height: "100%",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textDecoration: "none",
+                            color: "inherit",
+                        }}
+                    >
                         <img
                             src={it.icon}
                             alt={it.id}
