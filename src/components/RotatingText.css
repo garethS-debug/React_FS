@@ -78,6 +78,19 @@
   transition: padding 220ms ease, width 220ms ease;
 }
 
+/* helper class used for offscreen measurement so we can lock the pill width */
+.pill-style {
+  background: linear-gradient(90deg, #6a41ff 0%, #6b3cff 100%);
+  padding: 0.35rem 1rem;
+  border-radius: 14px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(106, 65, 255, 0.18);
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
 .text-rotate-lines {
   display: flex;
   flex-direction: column;
@@ -113,6 +126,9 @@
   line-height: 1;
   vertical-align: middle;
 }
+
+/* place the rotating line absolutely inside its parent so it won't push layout */
+/* keep .rotating-line in document flow so it doesn't overlap other content */
 
 /* make the static pieces match the pill text sizing and vertically center */
 .rotating-before,

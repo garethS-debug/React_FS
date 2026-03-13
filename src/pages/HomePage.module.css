@@ -3,13 +3,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
   padding: 50px 200px 50px;
   min-height: 60vh;
 }
 
 .heroLeft {
   flex: 1;
+  position: relative;
+  padding-right: 2rem;
 }
 
 .heroRight {
@@ -21,7 +23,7 @@
   line-height: 0.95;
   margin: 0;
   font-weight: 800;
-   padding: 90px 50px 50px 150px;
+  padding: 90px 50px 50px 150px;
 }
 
 .lead {

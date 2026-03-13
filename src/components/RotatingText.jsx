@@ -37,14 +37,74 @@ const RotatingText = forwardRef((props, ref) => {
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const pillRef = useRef(null);
+  const rootRef = useRef(null);
   const [pillWidth, setPillWidth] = useState(null);
 
   useLayoutEffect(() => {
-    if (!pillRef.current) return;
-    // measure the inner width of the pill's content and set explicit width
-    const w = Math.ceil(pillRef.current.scrollWidth);
-    setPillWidth(w);
-  }, [currentTextIndex, texts]);
+    if (!texts || !texts.length) return;
+    (async () => {
+      if (document.fonts && document.fonts.ready) await document.fonts.ready;
+
+      // Create an offscreen container so CSS applies and measure the widest "pill" text
+      const measuringContainer = document.createElement('div');
+      measuringContainer.style.position = 'absolute';
+      measuringContainer.style.left = '-9999px';
+      measuringContainer.style.top = '-9999px';
+      measuringContainer.style.visibility = 'hidden';
+      document.body.appendChild(measuringContainer);
+
+      let maxW = 0;
+      let maxLineW = 0;
+      const parent = rootRef.current && rootRef.current.parentElement;
+      const beforeText = parent ? (parent.querySelector('.rotating-before')?.textContent || '') : '';
+
+      texts.forEach(t => {
+        // measure pill (second word) width
+        const words = (t || '').split(' ');
+        const pillText = words[1] || words[0] || '';
+        const span = document.createElement('span');
+        span.className = 'text-rotate-word pill-style';
+        span.textContent = pillText;
+        measuringContainer.appendChild(span);
+        const w = Math.ceil(span.scrollWidth);
+        if (w > maxW) maxW = w;
+
+        // measure full line (including static before text)
+        const wrapper = document.createElement('span');
+        wrapper.className = 'rotating-line';
+        const before = document.createElement('span');
+        before.className = 'rotating-before';
+        before.textContent = beforeText;
+        const hero = document.createElement('span');
+        hero.className = mainClassName || 'rotating-hero';
+        hero.textContent = t;
+        wrapper.appendChild(before);
+        wrapper.appendChild(hero);
+        measuringContainer.appendChild(wrapper);
+        const lw = Math.ceil(wrapper.scrollWidth);
+        if (lw > maxLineW) maxLineW = lw;
+      });
+
+      document.body.removeChild(measuringContainer);
+      setPillWidth(maxW);
+
+      // Position the rotating text absolutely within the parent `.rotating-line`
+      // so the pill can change size without affecting document flow.
+      const rootEl = rootRef.current;
+      const parentEl = rootEl && rootEl.parentElement;
+      if (parentEl) {
+        // measure the static "before" text if present and set a CSS variable
+        const beforeEl = parentEl.querySelector('.rotating-before');
+        const beforeW = beforeEl ? Math.ceil(beforeEl.getBoundingClientRect().width) : 0;
+        parentEl.style.setProperty('--rotating-before-width', `${beforeW}px`);
+      }
+      if (rootEl) {
+        rootEl.style.position = 'absolute';
+        rootEl.style.left = 'var(--rotating-before-width, 0px)';
+        rootEl.style.top = '0';
+      }
+    })();
+  }, [texts, mainClassName]);
 
   const splitIntoCharacters = text => {
     if (typeof Intl !== 'undefined' && Intl.Segmenter) {
@@ -156,7 +216,7 @@ const RotatingText = forwardRef((props, ref) => {
   }, [next, rotationInterval, auto]);
 
   return (
-    <motion.span className={cn('text-rotate', mainClassName)} {...rest} layout transition={transition}>
+    <motion.span ref={rootRef} className={cn('text-rotate', mainClassName)} {...rest} layout transition={transition}>
       <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>
       <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
         <motion.span

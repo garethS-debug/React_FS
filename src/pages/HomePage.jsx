@@ -26,8 +26,10 @@ const HomePage = () => {
     transition={{ type: "spring", damping: 30, stiffness: 400 }}
     rotationInterval={2000}
   />
-  <span className="rotating-after">thinking</span>
+
 </span>
+
+<p className={styles.lead}>I design and build delightful, user-centered digital products. Welcome to my portfolio.</p>
 
 
           
