@@ -125,6 +125,7 @@
   font-weight: 800;
   line-height: 1;
   vertical-align: middle;
+  min-width: var(--rotating-line-width, auto);
 }
 
 /* place the rotating line absolutely inside its parent so it won't push layout */

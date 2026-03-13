@@ -88,6 +88,14 @@ const RotatingText = forwardRef((props, ref) => {
       document.body.removeChild(measuringContainer);
       setPillWidth(maxW);
 
+      // expose the widest full-line measurement so CSS can reserve space
+      if (parent) {
+        parent.style.setProperty('--rotating-line-width', `${maxLineW}px`);
+        // also set explicit inline width/min-width to ensure space is reserved
+        parent.style.minWidth = `${maxLineW}px`;
+        parent.style.width = `${maxLineW}px`;
+      }
+
       // Position the rotating text absolutely within the parent `.rotating-line`
       // so the pill can change size without affecting document flow.
       const rootEl = rootRef.current;
