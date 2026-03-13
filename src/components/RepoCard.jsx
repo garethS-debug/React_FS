@@ -1,10 +1,13 @@
 
 import { motion } from "motion/react"
 import logo from '../../assets/Logo/logo_500px.svg'
+import Folder from './Folder'
 
 export default function RepoCard({ repo }) {
 
-    
+
+
+
   return (
     //console.log(repo.name + " rendered in RepoCard.jsx"),
     
@@ -29,6 +32,17 @@ export default function RepoCard({ repo }) {
           View on GitHub
         </a>
       </div>
+
+      <div style={{ height: '600px', position: 'relative' }}>
+      <Folder
+        size={2}
+        color="#5227FF"
+        className="custom-folder"
+        items={["README.md", "index.js", "package.json"]}
+        label={repo?.name}
+      />
+
+</div>
     </li>
   );
 }
