@@ -5,7 +5,6 @@
   justify-content: space-between;
   gap: 4rem;
   padding: 50px 200px 50px;
-  margin-top: 20vh;
   min-height: 60vh;
 }
 
@@ -13,7 +12,7 @@
   flex: 1;
   position: relative;
   padding-right: 2rem;
-  
+  margin-top: 20vh;
 }
 
 .heroRight {
@@ -43,6 +42,9 @@
     flex-direction: column;
     text-align: center;
     padding: 1.5rem 1rem;
+  }
+
+  .heroLeft {
     margin-top: 5vh;
   }
 
