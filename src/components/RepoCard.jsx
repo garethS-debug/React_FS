@@ -32,17 +32,17 @@ export default function RepoCard({ repo }) {
           View on GitHub
         </a>
       </div>
-
+{/* 
       <div style={{ height: '600px', position: 'relative' }}>
-      {/* <Folder
+      <Folder
         size={2}
         color="#5227FF"
         className="custom-folder"
         items={["README.md", "index.js", "package.json"]}
         label={repo?.name}
-      /> */}
+      />
 
-</div>
+</div> */}
     </li>
   );
 }

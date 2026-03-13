@@ -10,9 +10,7 @@ function cn(...classes) {
 }
 
 const RotatingText = forwardRef((props, ref) => {
-  // DEBUG: log render so we can confirm this component mounts in the page
-  // Remove this after verifying in the browser console
-  // eslint-disable-next-line no-console
+
   console.log('RotatingText mounted, props texts:', props.texts && props.texts.slice(0,4));
   const {
     texts,
@@ -45,7 +43,7 @@ const RotatingText = forwardRef((props, ref) => {
     (async () => {
       if (document.fonts && document.fonts.ready) await document.fonts.ready;
 
-      // Create an offscreen container so CSS applies and measure the widest "pill" text
+
       const measuringContainer = document.createElement('div');
       measuringContainer.style.position = 'absolute';
       measuringContainer.style.left = '-9999px';
@@ -59,7 +57,7 @@ const RotatingText = forwardRef((props, ref) => {
       const beforeText = parent ? (parent.querySelector('.rotating-before')?.textContent || '') : '';
 
       texts.forEach(t => {
-        // measure pill (second word) width
+
         const words = (t || '').split(' ');
         const pillText = words[1] || words[0] || '';
         const span = document.createElement('span');
@@ -69,7 +67,7 @@ const RotatingText = forwardRef((props, ref) => {
         const w = Math.ceil(span.scrollWidth);
         if (w > maxW) maxW = w;
 
-        // measure full line (including static before text)
+
         const wrapper = document.createElement('span');
         wrapper.className = 'rotating-line';
         const before = document.createElement('span');
@@ -88,10 +86,10 @@ const RotatingText = forwardRef((props, ref) => {
       document.body.removeChild(measuringContainer);
       setPillWidth(maxW);
 
-      // expose the widest full-line measurement so CSS can reserve space
+
       if (parent) {
         parent.style.setProperty('--rotating-line-width', `${maxLineW}px`);
-        // also set explicit inline width/min-width to ensure space is reserved
+
         parent.style.minWidth = `${maxLineW}px`;
         parent.style.width = `${maxLineW}px`;
       }
