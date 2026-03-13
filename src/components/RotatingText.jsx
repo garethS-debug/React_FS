@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 import './RotatingText.css';
@@ -10,6 +10,10 @@ function cn(...classes) {
 }
 
 const RotatingText = forwardRef((props, ref) => {
+  // DEBUG: log render so we can confirm this component mounts in the page
+  // Remove this after verifying in the browser console
+  // eslint-disable-next-line no-console
+  console.log('RotatingText mounted, props texts:', props.texts && props.texts.slice(0,4));
   const {
     texts,
     transition = { type: 'spring', damping: 25, stiffness: 300 },
@@ -32,6 +36,15 @@ const RotatingText = forwardRef((props, ref) => {
   } = props;
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const pillRef = useRef(null);
+  const [pillWidth, setPillWidth] = useState(null);
+
+  useLayoutEffect(() => {
+    if (!pillRef.current) return;
+    // measure the inner width of the pill's content and set explicit width
+    const w = Math.ceil(pillRef.current.scrollWidth);
+    setPillWidth(w);
+  }, [currentTextIndex, texts]);
 
   const splitIntoCharacters = text => {
     if (typeof Intl !== 'undefined' && Intl.Segmenter) {
@@ -155,7 +168,12 @@ const RotatingText = forwardRef((props, ref) => {
           {elements.map((wordObj, wordIndex, array) => {
             const previousCharsCount = array.slice(0, wordIndex).reduce((sum, word) => sum + word.characters.length, 0);
             return (
-              <span key={wordIndex} className={cn('text-rotate-word', splitLevelClassName)}>
+              <span
+                key={wordIndex}
+                ref={wordIndex === 1 ? pillRef : undefined}
+                style={wordIndex === 1 && pillWidth ? { width: `${pillWidth}px` } : undefined}
+                className={cn('text-rotate-word', splitLevelClassName)}
+              >
                 {wordObj.characters.map((char, charIndex) => (
                   <motion.span
                     key={charIndex}
