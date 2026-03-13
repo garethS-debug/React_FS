@@ -1,0 +1,99 @@
+"use client"
+
+import * as motion from "motion/react-client"
+import { useEffect, useState } from "react"
+import socialItems from "../data/socialItems"
+
+
+export default function Social() {
+    const [order, setOrder] = useState(socialItems)
+
+    useEffect(() => {
+        const timeout = setTimeout(() => setOrder(shuffle(order)), 5000)
+        return () => clearTimeout(timeout)
+    }, [order])
+
+    return (
+        <ul style={container}>
+            {order.map((it) => (
+                <motion.li
+                    key={it.id}
+                    layout
+                    transition={spring}
+                    style={{ ...item, backgroundColor: it.color }}
+                >
+                    <a
+                        href={it.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={it.id}
+                        style={{
+                            display: "flex",
+                            width: "100%",
+                            height: "100%",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textDecoration: "none",
+                            color: "inherit",
+                        }}
+                    >
+                        <img
+                            src={it.icon}
+                            alt={it.id}
+                            style={{ width: "60%", height: "60%", objectFit: "contain" }}
+                        />
+                    </a>
+                </motion.li>
+            ))}
+        </ul>
+    )
+}
+
+/**
+ * ==============   Utils   ================
+ */
+function shuffle(array) {
+    return [...array].sort(() => Math.random() - 0.5)
+}
+
+/**
+ * ==============   Styles   ================
+ */
+
+const spring = {
+type: "spring",
+damping: 30,
+stiffness: 0.2,
+mass: 0.5,
+speed: 1.5,
+bounce: 1.5,
+}
+
+
+
+const container = {
+  listStyle: "none",
+  padding: 0,
+  margin: 0,
+  position: "relative",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "nowrap",
+  gap: 30,
+  width: "100%",      
+    overflowX: "visible",
+    justifyContent: "center",
+  alignItems: "center",
+}
+
+const item = {
+    width: 50,
+    height: 50,
+    minWidth: 50,
+    flex: "0 0 auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "10px",
+}
+

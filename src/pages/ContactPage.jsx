@@ -1,11 +1,13 @@
 // HomePage.js
 import React from 'react';
+import Social from '../components/Social';
 
 const HomePage = () => {
   return (
     <div>
-      <h2>Welcome to the Contact Page</h2>
-      <p>This is the main content of the contact page.</p>
+      <h2>Welcome to my Contact Page</h2>
+      <p>Contact information and additional links.</p>
+       <Social />
     </div>
   );
 };

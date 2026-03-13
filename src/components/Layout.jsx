@@ -1,38 +1,31 @@
 import { NavBar } from './NavBar'
 import Footer from './Footer';
+import Header from './Header';
 
-const pages = [
-  { name: 'Home', key: 'home' },
-  { name: 'About', key: 'about' },
-  { name: 'Contact', key: 'contact' },
-]
+
+// const pages = [
+//   { name: 'Home', key: 'home' },
+//   { name: 'About', key: 'about' },
+//   { name: 'Contact', key: 'contact' },
+// ]
 
 const Layout = ({ children, selectedPage, onSetPage }) => {
 
   // TODO: what's stored in children, selectedPage, and onSetPage?
 
   const renderPageLinks = () => {
-        
-
-    return pages.map(page => (
-       <li
-          key={page.key}
-          style={{
-            ...styles.sidebarLink,
-            ...(page.key === selectedPage ? styles.selected : {}),
-          }}
-          onClick={() => onSetPage(page.key)}
-        >
-          {page.name}
-        </li>
-    ));
+    // helper (not used): could return custom link list
+    return null
   }
 
 
   return (
     <div style={styles.container}>
+      {/* Header */}
+      {/* <Header /> */}
+
       {/* Navigation */}
-      <NavBar navLinks={renderPageLinks()} />
+      <NavBar selectedPage={selectedPage} onSetPage={onSetPage} />
 
       <div style={styles.main}>
         {/* Content Area */}
