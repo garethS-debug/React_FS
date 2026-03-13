@@ -10,7 +10,7 @@ const HomePage = () => {
       <h2>Welcome to the Projects Page</h2>
       <p>Display your past projects as a gallery or a list</p>
       <GitRepos />
-      <LogoLoop
+      {/* <LogoLoop
         logos={techLogos}
         speed={20}
         direction="left"
@@ -19,7 +19,7 @@ const HomePage = () => {
         hoverSpeed={0}
         fadeOut
         useCustomRender={false}
-      />
+      /> */}
     </div>
   );
 };
