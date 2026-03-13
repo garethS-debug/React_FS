@@ -3,20 +3,30 @@ import React from 'react';
 import Social from '../components/Social';
 import styles from './HomePage.module.css';
 import Drawing from '../components/Drawing';
-import AnimatedText from '../components/AnimatedText';
-// import TextRotate from '../components/text-rotate';
+import RotatingText from '../components/RotatingText';
+
 
 const HomePage = () => {
   return (
     <main>
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
-          {/* <h1 className={styles.title}>Building Digital products and experiences</h1> */}
-      {/* <TextRotate
-        texts={['Rotating', 'Text']}
-        mainClassName="text-white px-2 sm:px-2 md:px-3 bg-[#ff5941] overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-        rotationInterval={2000}
-      /> */}
+
+<RotatingText
+  texts={['React', 'Bits', 'Is', 'Cool!']}
+  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+  staggerFrom={"last"}
+  initial={{ y: "100%" }}
+  animate={{ y: 0 }}
+  exit={{ y: "-120%" }}
+  staggerDuration={0.025}
+  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+  rotationInterval={2000}
+/>
+
+
+          
         </div>
         <div className={styles.heroRight}>
          
