@@ -18,20 +18,12 @@
   padding: 0.15rem 0.5rem;
 }
 
-.text-rotate > .text-rotate-word:nth-child(2) {
-  background: linear-gradient(90deg,#6a41ff 0%,#6b3cff 100%);
-  color: #fff;
-  padding: 0.4rem 1.1rem;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(106,65,255,0.18);
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-}
+
 
 .rotating-hero {
   position: relative;
   z-index: 0;
+   color: #ffffff;
 }
 
 /* background pill behind the text */
