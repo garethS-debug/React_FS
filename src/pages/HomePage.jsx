@@ -3,14 +3,15 @@ import React from 'react';
 import Social from '../components/Social';
 import styles from './HomePage.module.css';
 import Drawing from '../components/Drawing';
+import AnimatedText from '../components/AnimatedText';
 
 const HomePage = () => {
   return (
     <main>
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
-          <h1 className={styles.title}>Building Digital products and experiences</h1>
-          
+          {/* <h1 className={styles.title}>Building Digital products and experiences</h1> */}
+          <AnimatedText />
         </div>
         <div className={styles.heroRight}>
          
