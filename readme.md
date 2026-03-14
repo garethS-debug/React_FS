@@ -19,4 +19,3 @@ MIT
 Gareth Swarte
 ## Contact Information
 garethjswarte@gmail.com
-s
