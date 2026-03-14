@@ -12,7 +12,7 @@ Start dev server: npm run dev
 Build for production: npm run build
 Preview production build locally: npm run preview
 ## Usage
-Dev: Run npm run dev and open the provided local URL (commonly http://localhost:5173).
+Dev: Run npm run dev and open the provided local URL (commonly http://localhost:5173)
 ## Licence
 MIT
 ## Author Name
