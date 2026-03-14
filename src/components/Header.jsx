@@ -1,5 +1,5 @@
 import React from "react"
-import EnterAnimation from "./logo"
+import EnterAnimation from "./logo.jsx"
 
 export default function Header() {
   return (

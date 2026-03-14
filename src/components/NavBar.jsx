@@ -3,7 +3,7 @@
 import { motion } from "motion/react"
 import './NavBar.modules.css';
 import logo from '../../assets/Logo/logo_500px.svg';
-import EnterAnimation from './logo'
+import EnterAnimation from './logo.jsx'
 import homeIcon from '../../assets/Icons/house.svg'
 import aboutIcon from '../../assets/Icons/journal.svg'
 import contactIcon from '../../assets/Icons/file-person.svg'
