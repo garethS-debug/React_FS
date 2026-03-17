@@ -3,3 +3,9 @@ npm -v
 
 
 . .\reactfs\Scripts\Activate.ps1
+
+. .\reactfs\Scripts\Activate.ps1
+
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+. .\reactfs\Scripts\Activate.ps1

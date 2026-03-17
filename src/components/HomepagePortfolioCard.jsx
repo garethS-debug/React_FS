@@ -1,0 +1,46 @@
+//Portfolio card for homepage, shows project name, description, and image. Links to project page.
+import { motion } from 'framer-motion';
+
+export default function HomepagePortfolioCard({ project }) {
+return (
+<li style={cardStyle}>
+<motion.img
+src={project?.logo}
+initial={{ opacity: 0, scale: 0 }}
+animate={{ rotate: 360, opacity: 1, scale: 1 }}
+transition={{ duration: 0.4, scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 } }}
+whileHover={{ scale: 1.05 }}
+whileTap={{ scale: 0.95 }}
+style={imgStyle}
+alt={project?.name || "logo"}
+/>
+<div style={{ flex: 1 }}>
+<div style={{ fontWeight: 600 }}>{project?.name}</div>
+<div style={{ fontSize: 12, color: "#555" }}>{project?.full_name}</div>
+<a href={project?.html_url} target="_blank" rel="noreferrer" style={{ fontSize: 12 }}>
+View on GitHub
+</a>
+</div>
+</li>
+);
+}
+
+
+
+const cardStyle = {
+  display: "flex",
+  gap: 12,
+  alignItems: "center",
+  padding: 12,
+  borderRadius: 8,
+  border: "1px solid #eee",
+  background: "#fff",
+  boxSizing: "border-box",
+};
+
+const imgStyle = {
+  width: 100,
+  height: 100,
+  objectFit: "cover",
+  display: "block",
+}
